@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@mipmap/o5"
+    tools:context=".MainActivity">
+<ImageView
+    android:src="@mipmap/p1"
+    android:id="@+id/p1"
+    android:layout_width="330px"
+    android:layout_height="330px" />
+
+
+
+
+
+
+
+    <Button
+        android:textColor="#ffff"
+        android:layout_marginTop="30px"
+        android:id="@+id/b"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:background="#8a000000"
+        android:text="Start"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+</LinearLayout>

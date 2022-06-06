@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@mipmap/m"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".temps">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/p1" />
+
+
+
+
+
+
+    <TextView
+        android:textSize="20dp"
+        android:text="Temp de déplacement de l'objectif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="15dp"
+        android:text="Niveau  1 : 1s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="15dp"
+        android:text="Niveau  1 : 0.9s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Niveau  1 : 0.8s"
+        android:textSize="15dp" />
+    <TextView
+        android:textSize="15dp"
+        android:text="Niveau  1 : 0.7s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Niveau  1 : 0.62s"
+        android:textSize="15dp" />
+    <TextView
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:text="Ce jeux a pour but de tester votre temps de reaction "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+<ImageView
+    android:layout_gravity="center"
+    android:src="@mipmap/ts"
+    android:layout_width="500px"
+    android:layout_height="700px" />
+
+
+    <TextView
+
+
+        android:textSize="20dp"
+        android:text="Jeux "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <TextView
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="au debut l'objectif se deplace d'une case a autre
+alors le but c'est de l'attraper or si vous le manquée en appuiant
+sur un autre case la c'est -1 point si non c'est +1
+Bonne chance ;)"
+            android:textSize="15dp" />
+
+    <Button
+        android:textColor="#fff"
+        android:background="#8a000000"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="30px"
+        android:layout_gravity="right"
+        android:id="@+id/b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="CC"
+        android:text="Retoure"/>
+    <TextView
+
+                android:layout_gravity="center"
+                android:textSize="15dp"
+                android:text="By MS "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+
