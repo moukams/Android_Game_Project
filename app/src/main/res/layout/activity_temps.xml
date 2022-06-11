@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".temps">
+    tools:context=".view.TempsView">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
