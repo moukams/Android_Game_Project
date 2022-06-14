@@ -18,7 +18,7 @@ public class NextGameDialog implements GameDialog{
             context.setScore(0);
             context.setA(0);
             context.getBt().setText("Prét !");
-            context.getS().setText(context.r+"Score="+score);
+            context.getS().setText(context.getR()+"Score="+score);
             context.getM().removeCallbacks(context.myRunnable);
         });
 
