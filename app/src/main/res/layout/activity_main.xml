@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:background="@mipmap/o5"
-    tools:context=".view.MainActivity">
+    tools:context=".MainActivity">
 <ImageView
     android:src="@mipmap/p1"
     android:id="@+id/p1"

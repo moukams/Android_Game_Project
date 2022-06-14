@@ -9,11 +9,11 @@ import android.widget.ImageView;
 
 public class Adapter extends BaseAdapter {
 
-    int[] image;
-    Context context;
-   public Adapter (Context context, int[] image){
+    int image [];
+    Context C ;
+   public Adapter (Context C,int image[]){
        this.image=image;
-       this.context = context;
+       this.C=C;
    }
 
     @Override
@@ -34,8 +34,9 @@ public class Adapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        ImageView im=new ImageView(context);
+        ImageView im=new ImageView(C);
 im.setImageResource(image[i]);
+//im.setScaleType(ImageView.ScaleType.CENTER_CROP);
 im.setLayoutParams(new GridView.LayoutParams(200,200));
 
         return im;
