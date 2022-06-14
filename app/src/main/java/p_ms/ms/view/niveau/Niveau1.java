@@ -7,16 +7,6 @@ import p_ms.ms.R;
 public class Niveau1 extends Niveau {
 
     @Override
-    protected int getNiveauTextColor() {
-        return Color.argb(205,255,117,12);
-    }
-
-    @Override
-    protected int getTextColor() {
-        return Color.argb(255,255,176,0);
-    }
-
-    @Override
     protected int getNiveau() {
         return 1;
     }

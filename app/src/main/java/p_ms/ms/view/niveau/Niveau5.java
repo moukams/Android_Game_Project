@@ -5,17 +5,7 @@ import android.graphics.Color;
 import p_ms.ms.R;
 
 public class Niveau5 extends Niveau {
-
-    @Override
-    protected int getNiveauTextColor() {
-        return Color.argb(255,0,0,1);
-    }
-
-    @Override
-    protected int getTextColor() {
-        return Color.argb(255,108,70,108);
-    }
-
+    
     @Override
     protected int getNiveau() {
         return 5;

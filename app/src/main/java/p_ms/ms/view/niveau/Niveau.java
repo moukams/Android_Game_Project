@@ -20,7 +20,7 @@ public abstract class Niveau {
         greyView.getbView().setBackgroundColor(Color.argb(100,0,0,0));
         greyView.music();
     }
-    
+
     protected abstract int getNiveau();
 
     protected abstract int getCy();
