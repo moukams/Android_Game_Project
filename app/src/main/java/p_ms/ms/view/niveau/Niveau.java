@@ -13,18 +13,14 @@ public abstract class Niveau {
         greyView.setCa(getCa());
         greyView.setCy(getCy());
         greyView.getNi().setText("Niveau= "+ getNiveau());
-        greyView.getS().setTextColor(getTextColor());
-        greyView.getT().setTextColor(getTextColor());
-        greyView.getNi().setTextColor(getNiveauTextColor());
+        greyView.getS().setTextColor(Color.argb(255,255,176,0));
+        greyView.getT().setTextColor(Color.argb(255,255,176,0));
+        greyView.getNi().setTextColor(Color.argb(205,255,117,12));
         greyView.getBt().setTextColor(Color.argb(255,255,255,250));
         greyView.getbView().setBackgroundColor(Color.argb(100,0,0,0));
         greyView.music();
     }
-
-    protected abstract int getNiveauTextColor();
-
-    protected abstract int getTextColor();
-
+    
     protected abstract int getNiveau();
 
     protected abstract int getCy();
