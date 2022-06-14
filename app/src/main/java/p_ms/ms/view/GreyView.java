@@ -64,7 +64,6 @@ public class GreyView extends AppCompatActivity implements Subject {
 
 
      gridView.setOnItemClickListener((parent, v, position, id) -> {
-         //  ((TextView) v).getText()
          if(image[position]==Caa) {
              score++;
              notifyObservers(score);
