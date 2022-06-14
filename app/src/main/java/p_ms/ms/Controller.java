@@ -13,7 +13,6 @@ import p_ms.ms.view.niveau.Niveau;
 
 public class Controller{
 
-    public AppCompatActivity home, temps,grey;
     private static Controller instance;
     public Niveau niveau;
     public GreyModel model;

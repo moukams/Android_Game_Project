@@ -18,23 +18,15 @@ public class FailGameDialog extends GameDialog{
         Fin.setMessage("le Score moyen est 37 point  ");
         Fin.setMessage("le Score mimum doit étre 30 pour passé le Niveau   ");
         GreyView v = this.view;
-        Fin.setPositiveButton("Recommancé", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                v.score = 0;
-                v.S.setText(v.r+"Score="+score);
-                v.A = 0;
-                v.Bt.setText("Prét !");
-                v.m.removeCallbacks(v.myRunnable);
+        Fin.setPositiveButton("Recommancé", (dialogInterface, i) -> {
+            v.score = 0;
+            v.S.setText(v.r+"Score="+score);
+            v.A = 0;
+            v.Bt.setText("Prét !");
+            v.m.removeCallbacks(v.myRunnable);
 
-            }
         });
-        Fin.setNegativeButton("Quitez", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                v.finish();
-            }
-        });
+        Fin.setNegativeButton("Quitez", (dialogInterface, i) -> v.finish());
 
         return Fin;
     }

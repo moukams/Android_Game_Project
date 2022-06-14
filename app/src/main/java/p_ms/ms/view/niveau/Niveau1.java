@@ -19,7 +19,7 @@ public class Niveau1 implements Niveau{
         greyView.T.setTextColor(Color.argb(255,255,176,0));
         greyView.Ni.setTextColor(Color.argb(205,255,117,12));
         greyView.Bt.setTextColor(Color.argb(255,0,0,0));
-        greyView.B.setBackgroundColor(Color.argb(255,255,176,0));
+        greyView.bView.setBackgroundColor(Color.argb(255,255,176,0));
     }
 
     @Override

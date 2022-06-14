@@ -18,7 +18,7 @@ public class Niveau5 implements Niveau{
         greyView.T.setTextColor(Color.argb(255,108,70,108));
         greyView.Ni.setTextColor(Color.argb(255,0,0,1));
         greyView.Bt.setTextColor(Color.argb(255,255,255,250));
-        greyView.B.setBackgroundColor(Color.argb(100,0,0,0));
+        greyView.bView.setBackgroundColor(Color.argb(100,0,0,0));
     }
 
     @Override

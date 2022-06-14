@@ -34,7 +34,7 @@ public class GreyView extends AppCompatActivity implements Subject {
     public MediaPlayer P;
     public Handler m = new Handler();
     public GridView gridView;
-    public View B;
+    public View bView;
     public GreyView ac ;
     public TextView Ni;
     public int A=0, score =0 ,Niv=1,Cy ,Caa,Ca,i;
@@ -51,7 +51,7 @@ public class GreyView extends AppCompatActivity implements Subject {
         controller.greyView = this;
         gridView =(GridView) findViewById(R.id.G) ;
         Bt = (TextView) findViewById(R.id.B);
-        B = (View) findViewById(R.id.B);
+        bView = (View) findViewById(R.id.B);
         S =(TextView) findViewById(R.id.S) ;
         T =(TextView) findViewById(R.id.T) ;
         Back =(ConstraintLayout) findViewById(R.id.Back) ;
@@ -63,20 +63,18 @@ public class GreyView extends AppCompatActivity implements Subject {
         addObserver(controller.model);
 
 
-     gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                //  ((TextView) v).getText()
-                if(image[position]==Caa) {
-                    score++;
-                    notifyObservers(score);
-                    S.setText(r+"Score="+ score);
-                } else {
-                    score--;
-                    notifyObservers(score);
-                    S.setText(r+"Score="+ score);
-                }
-            }});
+     gridView.setOnItemClickListener((parent, v, position, id) -> {
+         //  ((TextView) v).getText()
+         if(image[position]==Caa) {
+             score++;
+             notifyObservers(score);
+             S.setText(r+"Score="+ score);
+         } else {
+             score--;
+             notifyObservers(score);
+             S.setText(r+"Score="+ score);
+         }
+     });
 
 
     }

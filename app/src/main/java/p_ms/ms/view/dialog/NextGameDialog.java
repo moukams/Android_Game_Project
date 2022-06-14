@@ -18,21 +18,13 @@ public class NextGameDialog extends GameDialog{
         Fin.setMessage("Bravo ! Score minimal attent  ");
         Fin.setIcon(R.drawable.u);
         GreyView view = this.view;
-        Fin.setPositiveButton("Niveau-Suivant", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                view.updateNiveau();
-            }
-        });
-        Fin.setNegativeButton("Re-jouer", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                view.score = 0;
-                view.A = 0;
-                view.Bt.setText("Prét !");
-                view.S.setText(view.r+"Score="+score);
-                view.m.removeCallbacks(view.myRunnable);
-            }
+        Fin.setPositiveButton("Niveau-Suivant", (dialogInterface, i) -> view.updateNiveau());
+        Fin.setNegativeButton("Re-jouer", (dialogInterface, i) -> {
+            view.score = 0;
+            view.A = 0;
+            view.Bt.setText("Prét !");
+            view.S.setText(view.r+"Score="+score);
+            view.m.removeCallbacks(view.myRunnable);
         });
 
         return Fin;

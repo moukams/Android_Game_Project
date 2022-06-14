@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class Adapter extends BaseAdapter {
 
-    int image [];
+    int[] image;
     Context C ;
    public Adapter (Context C,int image[]){
        this.image=image;

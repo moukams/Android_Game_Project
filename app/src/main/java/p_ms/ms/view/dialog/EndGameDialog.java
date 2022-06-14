@@ -17,12 +17,7 @@ public class EndGameDialog extends GameDialog{
         AlertDialog.Builder Fin = new AlertDialog.Builder(this.view);
         Fin.setIcon(R.drawable.pu);
         GreyView view = this.view;
-        Fin.setPositiveButton("Quitez le jeux", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                view.finish();
-            }
-        });
+        Fin.setPositiveButton("Quitez le jeux", (dialogInterface, i) -> view.finish());
         return Fin;
     }
 }

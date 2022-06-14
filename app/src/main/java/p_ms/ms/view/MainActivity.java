@@ -22,16 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         P= MediaPlayer.create(this,R.raw.pret);
         P.start();
-        findViewById(R.id.b).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                openIntent(GreyView.class);
-            }
-        });
-        findViewById(R.id.p1).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                openIntent(TempsView.class);
-            }
-        });
+        findViewById(R.id.b).setOnClickListener(view -> openIntent(GreyView.class));
+        findViewById(R.id.p1).setOnClickListener(view -> openIntent(TempsView.class));
     }
 
     public void openIntent(Class intentClass){
