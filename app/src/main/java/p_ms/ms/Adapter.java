@@ -36,7 +36,6 @@ public class Adapter extends BaseAdapter {
 
         ImageView im=new ImageView(C);
 im.setImageResource(image[i]);
-//im.setScaleType(ImageView.ScaleType.CENTER_CROP);
 im.setLayoutParams(new GridView.LayoutParams(200,200));
 
         return im;

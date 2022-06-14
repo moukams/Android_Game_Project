@@ -21,7 +21,7 @@ public class FailGameDialog extends GameDialog{
         Fin.setPositiveButton("Recommancé", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                v.t = 0;
+                v.score = 0;
                 v.S.setText(v.r+"Score="+score);
                 v.A = 0;
                 v.Bt.setText("Prét !");

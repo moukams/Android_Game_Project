@@ -14,16 +14,12 @@ import p_ms.ms.R;
 public class TempsView extends AppCompatActivity {
 
     public MediaPlayer P ;
-    public Controller controller = Controller.getInstance();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temps);
         this.P = MediaPlayer.create(this, R.raw.pret);
-     //   P.stop();
         P.start();
     }
 

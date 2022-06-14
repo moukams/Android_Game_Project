@@ -14,7 +14,6 @@ public class Niveau3 implements Niveau{
         greyView.Cy=800;
         greyView.Ni.setText("Niveau= "+greyView.Niv);
         greyView.music();
-        //   Ni.setTextColor(Integer.parseInt("#FFB300FF"));
         greyView.S.setTextColor(Color.argb(255,140,90,53));
         greyView.T.setTextColor(Color.argb(255,0,12,0));
         greyView.Ni.setTextColor(Color.argb(255,126,7,174));

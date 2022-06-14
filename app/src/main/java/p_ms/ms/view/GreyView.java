@@ -1,6 +1,5 @@
 package p_ms.ms.view;
 
-import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -22,7 +21,6 @@ import p_ms.ms.Controller;
 import p_ms.ms.R;
 import p_ms.ms.obervor.Observer;
 import p_ms.ms.obervor.Subject;
-import p_ms.ms.view.dialog.GameDialog;
 import p_ms.ms.view.niveau.Niveau;
 import p_ms.ms.view.niveau.Niveau1;
 
@@ -35,11 +33,11 @@ public class GreyView extends AppCompatActivity implements Subject {
     public ConstraintLayout Back;
     public MediaPlayer P;
     public Handler m = new Handler();
-    public GridView G;
+    public GridView gridView;
     public View B;
     public GreyView ac ;
     public TextView Ni;
-    public int A=0, t=0 ,Niv=1,Cy ,Caa,Ca,i;
+    public int A=0, score =0 ,Niv=1,Cy ,Caa,Ca,i;
     public String r="";
     public TextView S , Bt,T;
     Random ala =new Random();
@@ -51,7 +49,7 @@ public class GreyView extends AppCompatActivity implements Subject {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grey);
         controller.greyView = this;
-        G =(GridView) findViewById(R.id.G) ;
+        gridView =(GridView) findViewById(R.id.G) ;
         Bt = (TextView) findViewById(R.id.B);
         B = (View) findViewById(R.id.B);
         S =(TextView) findViewById(R.id.S) ;
@@ -65,20 +63,19 @@ public class GreyView extends AppCompatActivity implements Subject {
         addObserver(controller.model);
 
 
-     G.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+     gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
                 //  ((TextView) v).getText()
                 if(image[position]==Caa) {
-                    t++;
-                    notifyObservers(t);
-                    S.setText(r+"Score="+t);
+                    score++;
+                    notifyObservers(score);
+                    S.setText(r+"Score="+ score);
                 } else {
-                    t--;
-                    notifyObservers(t);
-                    S.setText(r+"Score="+t);
+                    score--;
+                    notifyObservers(score);
+                    S.setText(r+"Score="+ score);
                 }
-            //  Toast.makeText(getApplicationContext(),"toast",Toast.LENGTH_SHORT).show();
             }});
 
 
@@ -87,7 +84,6 @@ public class GreyView extends AppCompatActivity implements Subject {
     public CountDownTimer Co = new CountDownTimer(30 * 1000, 1000) {
         @Override
         public void onTick(long l) {
-//int W=(int) l ;
             T.setText(l/1000+"/30 S");
 
         }
@@ -95,11 +91,11 @@ public class GreyView extends AppCompatActivity implements Subject {
         @Override
         public void onFinish() {
             Fin = controller.process();
-            Fin.setTitle("Votre Score=" + t);
+            Fin.setTitle("Votre Score=" + score);
             Bt.setText("Redémarré");
             m.removeCallbacks(myRunnable);
             A = 0;
-            t = 0;
+            score = 0;
 
             Fin.show();
 
@@ -112,7 +108,7 @@ public class GreyView extends AppCompatActivity implements Subject {
         }
         image[ala.nextInt(30)] = Caa;
         p_ms.ms.Adapter adapter=new p_ms.ms.Adapter(this,image);
-        G.setAdapter(adapter);
+        gridView.setAdapter(adapter);
     }
 
     public Runnable myRunnable = new Runnable() {
@@ -124,11 +120,10 @@ public class GreyView extends AppCompatActivity implements Subject {
     };
 
     public void B(View V){
-//Toast.makeText(getApplicationContext(),"toast",Toast.LENGTH_SHORT).show();
-      //  G();
 
         if(A==0) {
-            m.postDelayed(myRunnable, Cy);A=1;t=0;Bt.setText("arréter"); music();Co.start();P.start();
+            m.postDelayed(myRunnable, Cy);A=1;
+            score =0;Bt.setText("arréter"); music();Co.start();P.start();
             Toast.makeText(getApplicationContext(),"Start",Toast.LENGTH_SHORT).show();}
         else {
             Bt.setText("Redémarré");m.removeCallbacks(myRunnable);Co.cancel();A=0;P.stop();
@@ -144,8 +139,8 @@ public class GreyView extends AppCompatActivity implements Subject {
         if(niveau.next() != null)
             niveau = niveau.next();
         Niv++;
-        t = 0;
-        notifyObservers(t);
+        score = 0;
+        notifyObservers(score);
         controller.niveau = this.niveau;
         this.niveau.theme(this);
     }

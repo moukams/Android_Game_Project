@@ -27,7 +27,7 @@ public class NextGameDialog extends GameDialog{
         Fin.setNegativeButton("Re-jouer", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                view.t = 0;
+                view.score = 0;
                 view.A = 0;
                 view.Bt.setText("Prét !");
                 view.S.setText(view.r+"Score="+score);
