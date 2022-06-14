@@ -29,11 +29,11 @@ public class Controller{
     public AlertDialog.Builder process(){
         GameDialog dialog;
         if(!model.evaluateScore()) {
-            dialog = new FailGameDialog(greyView);
+            dialog = new FailGameDialog();
         }else if(niveau.next() == null) {
-            dialog = new EndGameDialog(greyView);
-        }else dialog = new NextGameDialog(greyView);
-        return dialog.render(model.score);
+            dialog = new EndGameDialog();
+        }else dialog = new NextGameDialog();
+        return dialog.render(model.score, greyView);
     }
 
 }

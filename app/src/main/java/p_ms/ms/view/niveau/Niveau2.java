@@ -5,20 +5,51 @@ import android.graphics.Color;
 import p_ms.ms.R;
 import p_ms.ms.view.GreyView;
 
-public class Niveau2 implements Niveau{
+public class Niveau2 extends Niveau{
+
     @Override
-    public void theme(GreyView greyView) {
-        greyView.Back.setBackgroundResource(R.mipmap.t2);
-        greyView.Ca=R.mipmap.oo2;
-        greyView.Caa=R.mipmap.x2;
-        greyView.Cy=900;
-        greyView.Ni.setText("Niveau= "+greyView.Niv);
-        greyView.music();
-        greyView.S.setTextColor(Color.argb(255,255,176,0));
-        greyView.T.setTextColor(Color.argb(255,255,176,0));
-        greyView.Ni.setTextColor(Color.argb(205,255,117,12));
-        greyView.Bt.setTextColor(Color.argb(255,0,0,0));
-        greyView.bView.setBackgroundColor(Color.argb(255,255,176,0));
+    protected int getViewColor() {
+        return Color.argb(255,255,176,0);
+    }
+
+    @Override
+    protected int getBtColor() {
+        return Color.argb(255,0,0,0);
+    }
+
+    @Override
+    protected int getNiveauTextColor() {
+        return Color.argb(205,255,117,12);
+    }
+
+    @Override
+    protected int getTextColor() {
+        return Color.argb(255,255,176,0);
+    }
+
+    @Override
+    protected int getNiveau() {
+        return 2;
+    }
+
+    @Override
+    protected int getCy() {
+        return 900;
+    }
+
+    @Override
+    protected int getCa() {
+        return R.mipmap.oo2;
+    }
+
+    @Override
+    protected int getCaa() {
+        return R.mipmap.x2;
+    }
+
+    @Override
+    protected int getBackground() {
+        return R.mipmap.t2;
     }
 
     @Override

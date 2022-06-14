@@ -5,28 +5,23 @@ import android.support.v7.app.AlertDialog;
 
 import p_ms.ms.view.GreyView;
 
-public class FailGameDialog extends GameDialog{
+public class FailGameDialog implements GameDialog{
 
 
-    public FailGameDialog(GreyView greyView) {
-        super(greyView);
-    }
-
-    public AlertDialog.Builder render(int score){
-        AlertDialog.Builder Fin = new AlertDialog.Builder(this.view);
+    public AlertDialog.Builder render(int score, GreyView context){
+        AlertDialog.Builder Fin = new AlertDialog.Builder(context);
         Fin.setTitle("Votre Score=" + score);
         Fin.setMessage("le Score moyen est 37 point  ");
         Fin.setMessage("le Score mimum doit étre 30 pour passé le Niveau   ");
-        GreyView v = this.view;
         Fin.setPositiveButton("Recommancé", (dialogInterface, i) -> {
-            v.score = 0;
-            v.S.setText(v.r+"Score="+score);
-            v.A = 0;
-            v.Bt.setText("Prét !");
-            v.m.removeCallbacks(v.myRunnable);
+            context.score = 0;
+            context.S.setText(context.r+"Score="+score);
+            context.A = 0;
+            context.Bt.setText("Prét !");
+            context.m.removeCallbacks(context.myRunnable);
 
         });
-        Fin.setNegativeButton("Quitez", (dialogInterface, i) -> v.finish());
+        Fin.setNegativeButton("Quitez", (dialogInterface, i) -> context.finish());
 
         return Fin;
     }

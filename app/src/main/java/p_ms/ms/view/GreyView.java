@@ -37,11 +37,16 @@ public class GreyView extends AppCompatActivity implements Subject {
     public View bView;
     public GreyView ac ;
     public TextView Ni;
-    public int A=0, score =0 ,Niv=1,Cy ,Caa,Ca,i;
+    public int A=0;
+    public int score =0;
+    public int Niv=1;
+    public int Cy;
+    public int Caa;
+    public int Ca;
     public String r="";
-    public TextView S , Bt,T;
+    public TextView S,Bt,T;
     Random ala =new Random();
-    int image[]=new int[30];
+    int[] image =new int[30];
     List<Observer> observerList = new ArrayList<>();
 
     @Override
@@ -64,15 +69,10 @@ public class GreyView extends AppCompatActivity implements Subject {
 
 
      gridView.setOnItemClickListener((parent, v, position, id) -> {
-         if(image[position]==Caa) {
-             score++;
-             notifyObservers(score);
-             S.setText(r+"Score="+ score);
-         } else {
-             score--;
-             notifyObservers(score);
-             S.setText(r+"Score="+ score);
-         }
+         if(image[position]==Caa) score++;
+         else score--;
+         notifyObservers(score);
+         S.setText(r+"Score="+ score);
      });
 
 
@@ -82,7 +82,6 @@ public class GreyView extends AppCompatActivity implements Subject {
         @Override
         public void onTick(long l) {
             T.setText(l/1000+"/30 S");
-
         }
 
         @Override

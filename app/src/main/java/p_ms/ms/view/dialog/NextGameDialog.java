@@ -1,30 +1,25 @@
 package p_ms.ms.view.dialog;
 
-import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
 import p_ms.ms.R;
 import p_ms.ms.view.GreyView;
 
-public class NextGameDialog extends GameDialog{
+public class NextGameDialog implements GameDialog{
 
-    public NextGameDialog(GreyView greyView) {
-        super(greyView);
-    }
 
     @Override
-    public AlertDialog.Builder render(int score) {
-        AlertDialog.Builder Fin = new AlertDialog.Builder(this.view);
+    public AlertDialog.Builder render(int score, GreyView context) {
+        AlertDialog.Builder Fin = new AlertDialog.Builder(context);
         Fin.setMessage("Bravo ! Score minimal attent  ");
         Fin.setIcon(R.drawable.u);
-        GreyView view = this.view;
-        Fin.setPositiveButton("Niveau-Suivant", (dialogInterface, i) -> view.updateNiveau());
+        Fin.setPositiveButton("Niveau-Suivant", (dialogInterface, i) -> context.updateNiveau());
         Fin.setNegativeButton("Re-jouer", (dialogInterface, i) -> {
-            view.score = 0;
-            view.A = 0;
-            view.Bt.setText("Prét !");
-            view.S.setText(view.r+"Score="+score);
-            view.m.removeCallbacks(view.myRunnable);
+            context.score = 0;
+            context.A = 0;
+            context.Bt.setText("Prét !");
+            context.S.setText(context.r+"Score="+score);
+            context.m.removeCallbacks(context.myRunnable);
         });
 
         return Fin;

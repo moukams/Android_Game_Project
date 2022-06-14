@@ -6,18 +6,13 @@ import android.support.v7.app.AlertDialog;
 import p_ms.ms.R;
 import p_ms.ms.view.GreyView;
 
-public class EndGameDialog extends GameDialog{
-
-    public EndGameDialog(GreyView greyView){
-        super(greyView);
-    }
+public class EndGameDialog implements GameDialog {
 
     @Override
-    public AlertDialog.Builder render(int score) {
-        AlertDialog.Builder Fin = new AlertDialog.Builder(this.view);
+    public AlertDialog.Builder render(int score, GreyView context) {
+        AlertDialog.Builder Fin = new AlertDialog.Builder(context);
         Fin.setIcon(R.drawable.pu);
-        GreyView view = this.view;
-        Fin.setPositiveButton("Quitez le jeux", (dialogInterface, i) -> view.finish());
+        Fin.setPositiveButton("Quitez le jeux", (dialogInterface, i) -> context.finish());
         return Fin;
     }
 }

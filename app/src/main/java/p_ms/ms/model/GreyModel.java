@@ -17,8 +17,4 @@ public class GreyModel extends Observer{
         return score > 29;
     }
 
-    public GameDialog outputDialog(){
-        return null;
-    }
-
 }
