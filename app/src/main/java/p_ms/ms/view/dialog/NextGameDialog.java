@@ -15,11 +15,11 @@ public class NextGameDialog implements GameDialog{
         Fin.setIcon(R.drawable.u);
         Fin.setPositiveButton("Niveau-Suivant", (dialogInterface, i) -> context.updateNiveau());
         Fin.setNegativeButton("Re-jouer", (dialogInterface, i) -> {
-            context.score = 0;
-            context.A = 0;
-            context.Bt.setText("Prét !");
-            context.S.setText(context.r+"Score="+score);
-            context.m.removeCallbacks(context.myRunnable);
+            context.setScore(0);
+            context.setA(0);
+            context.getBt().setText("Prét !");
+            context.getS().setText(context.r+"Score="+score);
+            context.getM().removeCallbacks(context.myRunnable);
         });
 
         return Fin;
