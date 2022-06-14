@@ -14,11 +14,11 @@ public class FailGameDialog implements GameDialog{
         Fin.setMessage("le Score moyen est 37 point  ");
         Fin.setMessage("le Score mimum doit étre 30 pour passé le Niveau   ");
         Fin.setPositiveButton("Recommancé", (dialogInterface, i) -> {
-            context.score = 0;
-            context.S.setText(context.r+"Score="+score);
-            context.A = 0;
-            context.Bt.setText("Prét !");
-            context.m.removeCallbacks(context.myRunnable);
+            context.setScore(0);
+            context.getS().setText(context.getR()+"Score="+score);
+            context.setA(0);
+            context.getBt().setText("Prét !");
+            context.getM().removeCallbacks(context.myRunnable);
 
         });
         Fin.setNegativeButton("Quitez", (dialogInterface, i) -> context.finish());
